@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
     render json: product, status: :ok
   end
 
+  def create
+    prod = @current_user.recipes.create!(recipe_params)
+    render json: prod, status: :created
+  end
+
   private
 
   def products_params
