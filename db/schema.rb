@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_05_085924) do
   create_table "products", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "name"
     t.integer "price"
     t.string "imageurl"
@@ -30,4 +30,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_085924) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "users"
 end
