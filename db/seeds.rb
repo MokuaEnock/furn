@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "📃 Seeding data..."
 
 5.times do
   user =
@@ -16,8 +17,10 @@
     user.products.create(
       name: Faker::Lorem.sentence,
       price: Faker::Number.number(3),
-      image: Faker::Avatar.image,
+      imageurl: Faker::Avatar.image,
       description: Faker::Lorem.paragraph
     )
   end
 end
+
+puts "✅ Done seeding"
